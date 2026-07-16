@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mush & More</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+🍄 <span>Mush & More</span>
+</div>
+
+<nav>
+
+<a href="#">Home</a>
+<a href="#products">Shop</a>
+<a href="#about">About</a>
+<a href="#recipes">Recipes</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+<div class="cart">
+<i class="fa-solid fa-cart-shopping"></i>
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>Farm Fresh Mushrooms Delivered Daily</h1>
+
+<p>
+Fresh Oyster and Button Mushrooms grown with care,
+packed hygienically and delivered to your doorstep.
+</p>
+
+<a href="#products" class="btn">
+Shop Now
+</a>
+
+</div>
+
+</section>
+
+<section class="products" id="products">
+
+<h2>Our Products</h2>
+
+<div class="product-grid">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800"
+alt="Oyster Mushroom">
+
+<h3>Oyster Mushroom</h3>
+
+<p>Fresh • Soft • Nutritious</p>
+
+<h4>₹120 / 200g</h4>
+
+<button>Add to Cart</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=800"
+alt="Button Mushroom">
+
+<h3>Button Mushroom</h3>
+
+<p>Premium Quality</p>
+
+<h4>₹90 / 200g</h4>
+
+<button>Add to Cart</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="about" id="about">
+
+<h2>Why Mush & More?</h2>
+
+<div class="features">
+
+<div>
+<h3>🌱 Fresh Daily</h3>
+<p>Harvested every morning.</p>
+</div>
+
+<div>
+<h3>🚚 Fast Delivery</h3>
+<p>Quick delivery to maintain freshness.</p>
+</div>
+
+<div>
+<h3>💚 Hygienically Packed</h3>
+<p>Safe, clean and eco-friendly packaging.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="recipes" id="recipes">
+
+<h2>Recipe Ideas</h2>
+
+<div class="recipe-list">
+
+<div>
+🍝 Creamy Mushroom Pasta
+</div>
+
+<div>
+🍛 Mushroom Curry
+</div>
+
+<div>
+🍚 Mushroom Fried Rice
+</div>
+
+<div>
+🥣 Mushroom Soup
+</div>
+
+</div>
+
+</section>
+
+<section class="contact" id="contact">
+
+<h2>Contact Us</h2>
+
+<form>
+
+<input type="text" placeholder="Your Name">
+
+<input type="email" placeholder="Email">
+
+<textarea placeholder="Message"></textarea>
+
+<button>Send</button>
+
+</form>
+
+</section>
+
+<footer>
+
+<h3>🍄 Mush & More</h3>
+
+<p>
+Fresh Oyster & Button Mushrooms
+</p>
+
+<p>
+© 2026 Mush & More. All Rights Reserved.
+</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
