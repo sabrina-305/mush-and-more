@@ -1,278 +1,86 @@
-/* Google Font */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
+// Mush & More - Basic Shopping Cart
 
-html{
-    scroll-behavior:smooth;
-}
+let cartCount = 0;
 
-body{
-    background:#f8f6ef;
-    color:#2d2d2d;
-}
+// Create notification element
+const notification = document.createElement("div");
+notification.style.position = "fixed";
+notification.style.top = "20px";
+notification.style.right = "20px";
+notification.style.background = "#2f6b3d";
+notification.style.color = "white";
+notification.style.padding = "12px 20px";
+notification.style.borderRadius = "10px";
+notification.style.boxShadow = "0 5px 15px rgba(0,0,0,0.2)";
+notification.style.display = "none";
+notification.style.zIndex = "9999";
+document.body.appendChild(notification);
 
-/* Header */
+// Find cart icon
+const cart = document.querySelector(".cart");
 
-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 8%;
-    background:#2f6b3d;
-    color:white;
-    position:sticky;
-    top:0;
-    z-index:1000;
-}
+// Add count badge
+const badge = document.createElement("span");
+badge.style.background = "red";
+badge.style.color = "white";
+badge.style.borderRadius = "50%";
+badge.style.padding = "3px 8px";
+badge.style.fontSize = "12px";
+badge.style.marginLeft = "6px";
+badge.innerText = "0";
+cart.appendChild(badge);
 
-.logo{
-    font-size:28px;
-    font-weight:700;
-}
+// Add button events
+document.querySelectorAll(".card button").forEach(button => {
+    button.addEventListener("click", function () {
 
-nav a{
-    color:white;
-    text-decoration:none;
-    margin:0 15px;
-    transition:.3s;
-}
+        cartCount++;
+        badge.innerText = cartCount;
 
-nav a:hover{
-    color:#ffd166;
-}
+        notification.innerHTML = "🍄 Product added to cart!";
+        notification.style.display = "block";
 
-.cart{
-    font-size:24px;
-    cursor:pointer;
-}
+        setTimeout(() => {
+            notification.style.display = "none";
+        }, 2000);
 
-/* Hero */
+    });
+});
 
-.hero{
-    height:90vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:20px;
-    color:white;
-    background:
-    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-    url("https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=1600") center/cover;
-}
+// Scroll animation
+const observer = new IntersectionObserver(entries => {
 
-.hero h1{
-    font-size:55px;
-}
+    entries.forEach(entry => {
 
-.hero p{
-    margin:20px auto;
-    max-width:700px;
-    font-size:20px;
-}
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+        }
 
-.btn{
-    display:inline-block;
-    padding:15px 35px;
-    background:#ffd166;
-    color:#222;
-    text-decoration:none;
-    border-radius:40px;
-    font-weight:600;
-    transition:.3s;
-}
+    });
 
-.btn:hover{
-    transform:translateY(-3px);
-}
+});
 
-/* Products */
+document.querySelectorAll(".card,.features div,.recipe-list div").forEach(el => {
 
-.products{
-    padding:80px 8%;
-}
+    el.style.opacity = "0";
+    el.style.transform = "translateY(40px)";
+    el.style.transition = "0.8s";
 
-.products h2{
-    text-align:center;
-    margin-bottom:40px;
-    font-size:40px;
-}
+    observer.observe(el);
 
-.product-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:35px;
-}
+});
 
-.card{
-    background:white;
-    border-radius:20px;
-    overflow:hidden;
-    box-shadow:0 10px 30px rgba(0,0,0,.1);
-    transition:.3s;
-}
+// Contact form
 
-.card:hover{
-    transform:translateY(-10px);
-}
+const form = document.querySelector("form");
 
-.card img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-}
+form.addEventListener("submit", function(e){
 
-.card h3{
-    padding:15px;
-}
+    e.preventDefault();
 
-.card p{
-    padding:0 15px;
-}
+    alert("Thank you for contacting Mush & More! We'll get back to you soon.");
 
-.card h4{
-    padding:15px;
-    color:#2f6b3d;
-}
+    form.reset();
 
-.card button{
-    width:90%;
-    margin:15px;
-    padding:12px;
-    border:none;
-    background:#2f6b3d;
-    color:white;
-    border-radius:10px;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.card button:hover{
-    background:#1d4728;
-}
-
-/* About */
-
-.about{
-    padding:80px 8%;
-    background:white;
-}
-
-.about h2{
-    text-align:center;
-    margin-bottom:50px;
-}
-
-.features{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-}
-
-.features div{
-    background:#f5f5f5;
-    padding:35px;
-    border-radius:18px;
-    text-align:center;
-}
-
-/* Recipes */
-
-.recipes{
-    padding:80px 8%;
-}
-
-.recipes h2{
-    text-align:center;
-    margin-bottom:40px;
-}
-
-.recipe-list{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:25px;
-}
-
-.recipe-list div{
-    background:#2f6b3d;
-    color:white;
-    padding:30px;
-    border-radius:15px;
-    text-align:center;
-}
-
-/* Contact */
-
-.contact{
-    background:white;
-    padding:80px 8%;
-}
-
-.contact h2{
-    text-align:center;
-    margin-bottom:40px;
-}
-
-form{
-    max-width:650px;
-    margin:auto;
-}
-
-input,
-textarea{
-    width:100%;
-    padding:15px;
-    margin-bottom:20px;
-    border-radius:10px;
-    border:1px solid #ccc;
-}
-
-textarea{
-    height:160px;
-}
-
-form button{
-    width:100%;
-    padding:15px;
-    border:none;
-    background:#2f6b3d;
-    color:white;
-    border-radius:10px;
-    font-size:17px;
-    cursor:pointer;
-}
-
-/* Footer */
-
-footer{
-    background:#204b2c;
-    color:white;
-    text-align:center;
-    padding:35px;
-}
-
-/* Mobile */
-
-@media(max-width:768px){
-
-header{
-flex-direction:column;
-}
-
-nav{
-margin:15px 0;
-}
-
-.hero h1{
-font-size:38px;
-}
-
-.hero p{
-font-size:18px;
-}
-
-}
+});
