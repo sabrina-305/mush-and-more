@@ -1,0 +1,278 @@
+/* Google Font */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f8f6ef;
+    color:#2d2d2d;
+}
+
+/* Header */
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:#2f6b3d;
+    color:white;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#ffd166;
+}
+
+.cart{
+    font-size:24px;
+    cursor:pointer;
+}
+
+/* Hero */
+
+.hero{
+    height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    color:white;
+    background:
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=1600") center/cover;
+}
+
+.hero h1{
+    font-size:55px;
+}
+
+.hero p{
+    margin:20px auto;
+    max-width:700px;
+    font-size:20px;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 35px;
+    background:#ffd166;
+    color:#222;
+    text-decoration:none;
+    border-radius:40px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+/* Products */
+
+.products{
+    padding:80px 8%;
+}
+
+.products h2{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:40px;
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:35px;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.card h3{
+    padding:15px;
+}
+
+.card p{
+    padding:0 15px;
+}
+
+.card h4{
+    padding:15px;
+    color:#2f6b3d;
+}
+
+.card button{
+    width:90%;
+    margin:15px;
+    padding:12px;
+    border:none;
+    background:#2f6b3d;
+    color:white;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.card button:hover{
+    background:#1d4728;
+}
+
+/* About */
+
+.about{
+    padding:80px 8%;
+    background:white;
+}
+
+.about h2{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.features div{
+    background:#f5f5f5;
+    padding:35px;
+    border-radius:18px;
+    text-align:center;
+}
+
+/* Recipes */
+
+.recipes{
+    padding:80px 8%;
+}
+
+.recipes h2{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.recipe-list{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.recipe-list div{
+    background:#2f6b3d;
+    color:white;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+}
+
+/* Contact */
+
+.contact{
+    background:white;
+    padding:80px 8%;
+}
+
+.contact h2{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+form{
+    max-width:650px;
+    margin:auto;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:15px;
+    margin-bottom:20px;
+    border-radius:10px;
+    border:1px solid #ccc;
+}
+
+textarea{
+    height:160px;
+}
+
+form button{
+    width:100%;
+    padding:15px;
+    border:none;
+    background:#2f6b3d;
+    color:white;
+    border-radius:10px;
+    font-size:17px;
+    cursor:pointer;
+}
+
+/* Footer */
+
+footer{
+    background:#204b2c;
+    color:white;
+    text-align:center;
+    padding:35px;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+header{
+flex-direction:column;
+}
+
+nav{
+margin:15px 0;
+}
+
+.hero h1{
+font-size:38px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+}
